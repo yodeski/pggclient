@@ -9,6 +9,7 @@ module.exports = function(app) {
     var name = file.substr(0, file.indexOf('.'));
     require('./' + name)(app);
   });
+
   /** Redirect everything else back to default if logged in. */
   app.get('*', function(req, res) {
     res.render('errors/404', {

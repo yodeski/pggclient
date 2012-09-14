@@ -27,8 +27,6 @@
   "dependencies":{
     "express":"",
     "ejs":"",
-    "mongoose": "",
-    "connect-mongodb": "",
     "connect": "",
     "nodemailer": "",
     "validator": ""
