@@ -4,6 +4,7 @@ var express = require('express');
 var engine = require('ejs-locals');
 var expressValidator = require('express-validator');
 
+
 var pg = require('pg');
 
 /** .*/
@@ -19,7 +20,7 @@ process.addListener('uncaughtException', function (err, stack) {
 /** Where to look for templates. */
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/cli/templates');
+app.set('views', __dirname + '/svr/templates');
 app.set('view options', {
     layout: true
 });

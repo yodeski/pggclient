@@ -5445,3 +5445,7 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
+
+.text-shadow {
+    text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.4);
+}

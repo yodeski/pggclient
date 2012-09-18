@@ -33,7 +33,7 @@ module.exports = function (app) {
                 }
             }
             else
-                res.send(result.error, 500);
+                res.send(data.error, 500);
         });
     });
 

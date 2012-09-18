@@ -31,7 +31,7 @@ App.leftMenu = Em.ArrayController.create({
         // If we don't already have an object with this id, add it.
         if (typeof this._idCache[id] === "undefined") {
             this.pushObject(item);
-            var $_li = $('<li class="btn-large" style="color:' + item.color + '"><i class="' + item.icon + ' icon-large"></i><br /><small style="font-size:12px;">' + item.text + '</small></li>');
+            var $_li = $('<li class="btn-large" style="color:' + item.color + '"><i class="' + item.icon + ' icon-large text-shadow"></i><br /><small style="font-size:12px;">' + item.text + '</small></li>');
             $_li.hover(
                 function () {
                     $(this).css({ "color": item.hovercolor, "cursor": "pointer" });
