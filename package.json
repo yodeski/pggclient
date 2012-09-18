@@ -15,7 +15,7 @@
     {
       "name": "Thanh Hai Mai",
       "email": "thanhhaipmai@gmail.com"
-    } 
+    }
   ],
   "repository": {
     "type": "git",
@@ -24,12 +24,15 @@
   "engines": {
     "node": "~v0.6.7"
   },
-  "dependencies":{
-    "express":"",
-    "ejs":"",
+  "dependencies": {
+    "express": "",
+    "ejs": "",
     "connect": "",
     "nodemailer": "",
-    "validator": ""
+    "validator": "",
+    "ejs-locals": "~0.2.5",
+    "pg": "~0.8.4",
+    "node-dbi": "~0.6.1"
   },
   "devDependencies": {
     "vows": "0.6.1"

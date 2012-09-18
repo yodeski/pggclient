@@ -1,0 +1,44 @@
+﻿{
+  "results": [
+    {
+      "id":1,
+      "text": "Home",
+      "color": "#000",
+      "hovercolor": "#ff6a00",
+      "icon": "icon-home",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":2,
+      "text": "Global",
+      "color": "#000",
+      "hovercolor": "#05c21d",
+      "icon": "icon-globe",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":3,
+      "text": "Panel",
+      "color": "#000",
+      "hovercolor": "#0094ff",
+      "icon": "icon-dashboard",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":4,
+      "text": "Sources",
+      "color": "#000",
+      "hovercolor": "#b200ff",
+      "icon": "icon-inbox",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":5,
+      "text": "Users",
+      "color": "#000",
+      "hovercolor": "#ff006e",
+      "icon": "icon-user",
+      "iconsize": "icon-large"
+    }
+  ]
+}

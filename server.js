@@ -1,33 +1,31 @@
 /** Setting up dependencies. */
 var util = require('util');
 var express = require('express');
-expressValidator = require('express-validator');
+var engine = require('ejs-locals');
+var expressValidator = require('express-validator');
 
-//var mongoose = require('mongoose');
-//var mongoStore = require('connect-mongodb');
+var pg = require('pg');
 
 /** .*/
 var app = module.exports = express();
 var config = app.config = require('./config');
-var db;
+app.use(pg);
 
-/** Database models. */
-//require('./models').defineModels(mongoose, app, function () {
-//    db = mongoose.connect(config.dburi);
-//});
-
-/** .*/
 process.addListener('uncaughtException', function (err, stack) {
     console.log('Caught exception: ' + err + '\n' + err.stack);
     console.log('\u0007');
 });
 
 /** Where to look for templates. */
+app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/cli/templates');
+app.set('view options', {
+    layout: true
+});
 
 /** Set up server, session management. */
-app.use(express.favicon(__dirname + '/public/favicon.ico', {
+app.use(express.favicon(__dirname + '/cli/public/favicon.ico', {
     maxAge: config.FAVICON_LIFETIME
 }));
 
@@ -42,14 +40,15 @@ app.use(express.logger({
     format: ':req[x-real-ip] :date (:response-time ms): :method :url'
 }));
 
-app.use(express.static(__dirname + '/public', {
+app.use(express.static(__dirname + '/cli/public', {
     maxAge: config.COOKIE_LIFETIME
 }));
 
 app.use(expressValidator);
 
 /** Load all the lib. */
-require('./lib')(app);
+require('./svr/lib')(app);
+
 
 app.use(app.router);
 
@@ -73,7 +72,7 @@ app.configure('production', function () {
         dumpExceptions: true
     }));
 
-    app.all('/robots.txt', function (req, res) {
+    app.all('/cli/robots.txt', function (req, res) {
         res.send('User-agent: *', {
             'Content-Type': 'text/plain'
         });
@@ -81,7 +80,7 @@ app.configure('production', function () {
 });
 
 /** Load all the routes. */
-require('./routes')(app);
+require('./svr/routes')(app);
 
 /** Start listenning. */
 app.listen(config.port);
