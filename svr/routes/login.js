@@ -14,7 +14,7 @@ module.exports = function (app) {
     req.assert('password', 'Invalid getparam').notEmpty();
     req.sanitize('username').toString();
     req.sanitize('password').toString();
-
+    
     var errors = req.validationErrors();
     if (errors) {
         res.send('There have been validation errors: ' + util.inspect(errors), 500);
