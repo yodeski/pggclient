@@ -4,7 +4,6 @@ var express = require('express');
 var engine = require('ejs-locals');
 var expressValidator = require('express-validator');
 
-
 var pg = require('pg');
 
 /** .*/

@@ -7,6 +7,8 @@ window.App = Ember.Application.create({
     ready: function () {
 
         App.leftMenu.getItems();
+        App.leftMenu.adjustMainContent();
+
     }
 });
 
@@ -31,15 +33,8 @@ App.leftMenu = Em.ArrayController.create({
         // If we don't already have an object with this id, add it.
         if (typeof this._idCache[id] === "undefined") {
             this.pushObject(item);
-            var $_li = $('<li class="btn-large" style="color:' + item.color + '"><i class="' + item.icon + ' icon-large text-shadow"></i><br /><small style="font-size:12px;">' + item.text + '</small></li>');
-            $_li.hover(
-                function () {
-                    $(this).css({ "color": item.hovercolor, "cursor": "pointer" });
-                },
-                function () {
-                    $(this).css({ "color": item.color, "cursor": "default" });
-                }
-            );
+            var $_li = $('<li class="btn-large pointer nobckg" style="color:' + item.color + '"><a href="' + item.ref + '" class="nobckg style="color:' + item.color + '"><i class="' + item.icon + ' icon-large text-shadow"></i>  <small style="font-size:12px;">' + item.text + '</small></a></li>');
+
             $('ul#leftMenu').append($_li);
 
             this._idCache[id] = item.id;
@@ -56,5 +51,12 @@ App.leftMenu = Em.ArrayController.create({
                 self.addItem(App.LeftMenu.create(data.results[i]));
             }
         });
+    },
+
+    adjustMainContent: function() {
+        var docH = $(document).height();
+        var headH = $("#divHeader").height();
+        var footH = $("#divfooter").height();
+        $("#maincontent").height(docH - headH - footH - 130);
     }
 });

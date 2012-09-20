@@ -2,39 +2,53 @@
   "results": [
     {
       "id":1,
-      "text": "Home",
+      "text": "My Dashboard",
+      "ref": "/dashboard",
       "color": "#000",
-      "hovercolor": "#ff6a00",
-      "icon": "icon-home",
-      "iconsize": "icon-large"
-    },
-    {
-      "id":2,
-      "text": "Global",
-      "color": "#000",
-      "hovercolor": "#05c21d",
-      "icon": "icon-globe",
-      "iconsize": "icon-large"
-    },
-    {
-      "id":3,
-      "text": "Panel",
-      "color": "#000",
-      "hovercolor": "#0094ff",
       "icon": "icon-dashboard",
       "iconsize": "icon-large"
     },
     {
-      "id":4,
-      "text": "Sources",
+      "id":2,
+      "text": "My tables",
+      "ref": "/tables",
       "color": "#000",
       "hovercolor": "#b200ff",
-      "icon": "icon-inbox",
+      "icon": "icon-table",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":3,
+      "text": "My Views",
+      "ref": "/views",
+      "color": "#000",
+      "hovercolor": "#b200ff",
+      "icon": "icon-hdd",
+      "iconsize": "icon-large"
+    },
+    {
+      "id":4,
+      "text": "My functions",
+      "ref": "/functions",
+      "color": "#000",
+      "hovercolor": "#ff6a00",
+      "icon": "icon-bolt",
       "iconsize": "icon-large"
     },
     {
       "id":5,
-      "text": "Users",
+      "text": "Configuration",
+      "ref": "/parameters",
+      "color": "#000",
+      "hovercolor": "#05c21d",
+      "icon": "icon-cogs",
+      "iconsize": "icon-large"
+    },
+
+    {
+      "id":6,
+      "text": "My profile",
+      "ref": "/users",
       "color": "#000",
       "hovercolor": "#ff006e",
       "icon": "icon-user",

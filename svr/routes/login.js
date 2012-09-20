@@ -21,8 +21,8 @@ module.exports = function (app) {
         return;
     }
 
-    dacFactory.init(app.config, function (result) {
-        var client = result;
+    dacFactory.init(app.config, function (client) {
+
         dacUser.validateLogin(client, req.body.username, req.body.username, req.body.password, function (data) {
             if (!data.error) {
                 console.log(data.rows[0]);
