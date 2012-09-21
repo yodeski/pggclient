@@ -6,53 +6,70 @@
       "ref": "/dashboard",
       "color": "#000",
       "icon": "icon-dashboard",
-      "iconsize": "icon-large"
+      "source": "submit"
     },
     {
       "id":2,
       "text": "My tables",
-      "ref": "/tables",
+      "ref": "/mytables",
       "color": "#000",
       "hovercolor": "#b200ff",
       "icon": "icon-table",
-      "iconsize": "icon-large"
+      "source": "popover"
     },
     {
       "id":3,
       "text": "My Views",
-      "ref": "/views",
+      "ref": "/mytables",
       "color": "#000",
       "hovercolor": "#b200ff",
       "icon": "icon-hdd",
-      "iconsize": "icon-large"
+      "source": "popover"
     },
     {
       "id":4,
       "text": "My functions",
-      "ref": "/functions",
+      "ref": "/mytables",
       "color": "#000",
       "hovercolor": "#ff6a00",
       "icon": "icon-bolt",
-      "iconsize": "icon-large"
+      "source": "popover"
     },
     {
       "id":5,
+      "text": "My shares",
+      "ref": "/myshares",
+      "color": "#000",
+      "hovercolor": "#ff6a00",
+      "icon": "icon-share",
+      "source": "submit"
+    },
+    {
+      "id":6,
       "text": "Configuration",
-      "ref": "/parameters",
+      "ref": "/configuration",
       "color": "#000",
       "hovercolor": "#05c21d",
       "icon": "icon-cogs",
-      "iconsize": "icon-large"
+      "source": "submit"
     },
-
     {
-      "id":6,
+      "id":7,
       "text": "My profile",
-      "ref": "/users",
+      "ref": "/profile",
       "color": "#000",
       "hovercolor": "#ff006e",
       "icon": "icon-user",
-      "iconsize": "icon-large"
+      "source": "submit"
+    },
+    {
+      "id":8,
+      "text": "Work in progress",
+      "ref": "/mytables",
+      "color": "#000",
+      "hovercolor": "#ff006e",
+      "icon": "icon-tags",
+      "source": "submit"
     }
   ]
 }
