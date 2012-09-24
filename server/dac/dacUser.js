@@ -3,9 +3,12 @@
 
 module.exports = {
 
-    validateLogin: function (client, username, email, pass, callback) {
+    getLogin: function (client, username, email, pass, callback) {
 
-        client.on('drain', client.end.bind(client));
+        client.on('drain', function(client){
+            client.end();
+        });
+
         try {
             var query = client.query({
                 text: "SELECT * from validate_user ($1, $2)",
@@ -29,9 +32,6 @@ module.exports = {
         catch (e) {
             callback(data = { rows: [], error: e });
         }
-    }
-};
+    },
 
-var hash = function (passwd, salt) {
-    return crypto.createHmac('sha256', salt).update(passwd).digest('hex');
 };
