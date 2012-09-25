@@ -27,6 +27,11 @@ module.exports = function(app) {
 
   });
 
+  app.get('/getTemplate', function (req, res) {
+      var myMenu = require('../resources/leftMenu.json');
+      res.render('partials/leftNav',{ menuItems: myMenu });
+  });
+
   app.post('/getMenu', function (req, res) {
       var myMenu = require('../resources/leftMenu.json');
       res.send(myMenu);

@@ -19,13 +19,13 @@ process.addListener('uncaughtException', function (err, stack) {
 /** Where to look for templates. */
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/svr/templates');
+app.set('views', __dirname + '/server/templates');
 app.set('view options', {
     layout: true
 });
 
 /** Set up server, session management. */
-app.use(express.favicon(__dirname + '/cli/public/favicon.ico', {
+app.use(express.favicon(__dirname + '/public/favicon.ico', {
     maxAge: config.FAVICON_LIFETIME
 }));
 
@@ -40,14 +40,14 @@ app.use(express.logger({
     format: ':req[x-real-ip] :date (:response-time ms): :method :url'
 }));
 
-app.use(express.static(__dirname + '/cli/public', {
+app.use(express.static(__dirname + '/public', {
     maxAge: config.COOKIE_LIFETIME
 }));
 
 app.use(expressValidator);
 
 /** Load all the lib. */
-require('./svr/lib')(app);
+require('./server/lib')(app);
 
 
 app.use(app.router);
@@ -72,7 +72,7 @@ app.configure('production', function () {
         dumpExceptions: true
     }));
 
-    app.all('/cli/robots.txt', function (req, res) {
+    app.all('/robots.txt', function (req, res) {
         res.send('User-agent: *', {
             'Content-Type': 'text/plain'
         });
@@ -80,7 +80,7 @@ app.configure('production', function () {
 });
 
 /** Load all the routes. */
-require('./svr/routes')(app);
+require('./server/routes')(app);
 
 /** Start listenning. */
 app.listen(config.port);
