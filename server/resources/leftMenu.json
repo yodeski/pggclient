@@ -1,4 +1,4 @@
-﻿{
+{
   "results": [
     {
       "id":1,
@@ -48,7 +48,7 @@
       "id":4,
       "itemname": "myfunctions",
       "text": "My functions",
-      "ref": "/mytables",
+      "ref": "/myfunctions",
       "color": "#000",
       "hovercolor": "#ff6a00",
       "icon": "icon-bolt",

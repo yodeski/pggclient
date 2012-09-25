@@ -26,7 +26,7 @@ module.exports = function(app) {
     }   
 
   });
-
+/*
   app.get('/getTemplate', function (req, res) {
       var myMenu = require('../resources/leftMenu.json');
       res.render('partials/leftNav',{ menuItems: myMenu });
@@ -42,6 +42,7 @@ module.exports = function(app) {
         res.render('partials/mytables',{ sources: data.obj, error: data.error });  
       })  
   });
+  */
 
 
 };

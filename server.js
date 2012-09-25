@@ -83,5 +83,5 @@ app.configure('production', function () {
 require('./server/routes')(app);
 
 /** Start listenning. */
-app.listen(config.port);
+app.listen(config.port, config.host);
 util.log(util.format('ENV: %s, listening on http://%s:%s', config.env, 'localhost', config.port));

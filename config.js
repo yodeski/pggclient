@@ -3,10 +3,10 @@ var DEBUG = (process.env.NODE_ENV !== 'production');
 module.exports = {
     /** postgresql database uri. */
     driverDB: 'pg',
-    pguser: "yodeski",
+    pguser: "pggstduser",
     pgpass: "vivirencanada",
     pgdb: "pggclient",
-    pghost: "192.168.1.2",
+    pghost: "ec2-204-236-171-205.us-west-1.compute.amazonaws.com",
     pgport: 5432,
     /** Session secret. */
     secret: 'I am a session secret. Please change me (and keep me a secret).',
@@ -19,9 +19,9 @@ module.exports = {
     /** Current node environment. */
     env: (process.env.NODE_ENV || 'development'),
     /** Port to use. */
-    port: DEBUG ? 8086 : process.env.PORT || 80,
-    /** Your SMTP information. You can use gmail or your own server. */
-    enableSMTP: true,
+    port: process.env.PORT, //DEBUG ? 8086 : process.env.PORT || 3131,
+    host: process.env.IP, 
+    enableSMTP: true, /** Your SMTP information. You can use gmail or your own server. */
     SMTP: {
         host: "smtp.gmail.com",
         port: 587,

@@ -5501,4 +5501,10 @@ body { width:100%; height:100%; margin:0 auto; background:#fff;}
 .lnh26 {line-height: 26px !important;}
 .lnh28 {line-height: 28px !important;}
 .lnh30 {line-height: 30px !important;}
+
 .scrolled {overflow: scroll;}
+.scroll-pane
+{
+	max-height: 400px;
+	overflow: auto;
+}

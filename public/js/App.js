@@ -5,7 +5,7 @@ window.App = Ember.Application.create({
     
     // When everything is loaded.
     ready: function () {
-
+        $('.scroll-pane').jScrollPane();
         App.leftMenu.getItems();
         this.adjustMainContent();
         $("[rel=tooltip]").tooltip();
@@ -86,8 +86,7 @@ App.leftMenu = Em.ArrayController.create({
         elem.live('click', function(e) {
             $(this).clickover('show');
             e.preventDefault();
-        }); 
-        
+        });
     },
     setToolsToPopOver: function(item, elem){
         var self = this;
@@ -100,6 +99,7 @@ App.leftMenu = Em.ArrayController.create({
             toolbtn.find('a[rel=tooltip]').tooltip();
         }   
         popheader.append(toolbtn);
+        $('.scroll-pane').jScrollPane();
     },
     bindItemClick: function(item) {
         var url = item.ref;
